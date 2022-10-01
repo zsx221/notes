@@ -31,3 +31,10 @@
 
       Serializable(S串行化)：解决所有问题，强制事务的串行执行，通过隐式加共享锁实现即sql后追加lock in share mode,
         会和update、delete互斥。读取数据时，必须先增加表级共享锁，直到事务结束时才释放，修改数据时，必须先增加表级排它锁，直到事务结束才释放；
+  4、讲讲事务隔离的一些特例。
+    先讲讲事务的启动时机。
+        begin/start transaction命令并不是一个事务的起点，在执行到它们之后的第一个操作innoDB表的语句，事务
+        才真正启动。立马启动一个事务可以使用start transaction with consistent snapshot 这个命令。
+        总结事务的启动方式：
+            第一种启动方式，一致性视图是在第执行第一个快照读语句时创建的；
+            第二种启动方式，一致性视图是在执行 start transaction with consistent snapshot 时创建的。
