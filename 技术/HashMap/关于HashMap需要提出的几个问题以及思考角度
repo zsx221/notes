@@ -33,7 +33,7 @@
         答：当链化严重时候，这个时候的查找效率就变低了，变成O(n)级别了，这个时候引入红黑树可以提高查找效率。
     8.HashMap扩容原理?
         答：resize()方法用来进行扩容，创建一个更大的数组，把old数组里面的数据搬过去。(通常是两次幂的形式扩容),特殊情况，比如旧的cap*2大于最大的容量，就会设置为最大的容量。
-            还有一种就是oldcap大于maxcap,这个时候阈值就设置为maxcap
+            还有一种就是oldcap大于maxcap,这个时候阈值就设置为maxcap，扩容之后，1.8为节省重新计算hash值的时间newTab[e.hash & (newCap - 1)]，这个是计算
 第三部分,手撕源码:
     1.HashMap核心属性分析(threshold, loadFactory, size, modCount)
     2.构造方法分析
