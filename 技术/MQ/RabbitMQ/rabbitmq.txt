@@ -3,7 +3,7 @@ docker search rabbitmq:management
 docker pull rabbitmq:management
 docker images
 
-注意:如果docker pu11 rabbitmq 后面不带management,启动rabbi tmq后是无法打开管理界面的，所以我们要下
+注意:如果docker pull rabbitmq 后面不带management,启动rabbitmq后是无法打开管理界面的，所以我们要下
 载带management插件的rabbitmq
 
 1.创建rabbitmq容器
