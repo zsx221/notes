@@ -11,3 +11,9 @@ AQS使用一个volatile的int类型的成员变量来表示同步状态
  通过CAS完成对State值的修改。
 
 
+
+synchronized 实现原理、CAS无锁化的原理、AQS是什么、ConcurrentHashMap   
+锁的原理、线程池的原理、java内存模型、volatile说一下吗、对java并发包有什么了解?一连串的问题
+
+
+
