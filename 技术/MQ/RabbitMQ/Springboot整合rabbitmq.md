@@ -19,8 +19,6 @@
 3.编写yml配置,基本信息配置
 4.定义监听类，使用@RabbitListener注解完成队列监听。
 
-
-
 小结
 ●SpringBoot提供 了快速整合RabbitMQ的方式
 ●基本信息再yml中配置，队列交互机以及绑定关系在配置类中使用Bean的方式配置
