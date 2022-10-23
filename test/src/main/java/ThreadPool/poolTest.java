@@ -1,11 +1,7 @@
 package ThreadPool;
-
-import lombok.val;
 import org.junit.Test;
-
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
