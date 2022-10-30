@@ -1,6 +1,6 @@
 package SpringTest.spring.controller.aop;
 
-import SpringTest.spring.config.aop.MainConfigOfAOP;
+import SpringTest.spring.service.aop.MainConfigOfAOP;
 import SpringTest.spring.service.aop.MathCalculator;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Controller;

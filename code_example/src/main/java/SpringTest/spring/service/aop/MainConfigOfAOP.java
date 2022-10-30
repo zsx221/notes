@@ -1,7 +1,5 @@
-package SpringTest.spring.config.aop;
+package SpringTest.spring.service.aop;
 
-import SpringTest.spring.service.aop.LogAspects;
-import SpringTest.spring.service.aop.MathCalculator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
