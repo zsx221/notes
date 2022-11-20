@@ -90,5 +90,4 @@ java内存模型
     4、volatile与happens-before关系
         访问volatile变量在语句间建立了happens-before关系。
         当写入一个volatile变量时，它与之后的该变量的读操作建立了happens-before关系。
-        那么什么是happens-before关系呢？可以参考笔者之前的博客
-        简单来说，就是保证一个语句的影响会被另一个语句看到。
+        那么什么是happens-before关系呢？简单来说，就是保证一个语句的影响会被另一个语句看到。
