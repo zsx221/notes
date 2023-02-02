@@ -1,4 +1,4 @@
-java内存模型
+    java内存模型
 
     连环炮:内存模型-→原子性、可见性、有序性 ->volatile+可见性->volatile+有序性
         （指令重排+ happens-before)->voaltile+原子性->volatile底层的原理（内存屏障级别的原理)
@@ -18,7 +18,7 @@ java内存模型
 
     3、volatile+可见性，volatile怎么保证可见性？
         答： lock指令: volatile保证可见性
-         对volatile修饰的变量，执行写操作的话，JVM会发送一条lock前缀指令给CPU，CPU在计算完之后会立即将这个值写回主内存，
+         对volatile修饰的变量，执行写操作的话，JVM会发送一条lock前缀指令给CPU，CPU在计算完之后会立即将这个值写回主内存
           同时因为有MESI缓存一致性协议，所以各个CPU都会对总线进行嗅探，自己本地缓存中的数据是否被别人修改
            如果发现别人修改了某个缓存的数据，那么CPU就会将自己本地缓存的数据过期掉
              然后 这个CPU上执行的线程在读取那个变量的时候，就会从主内存重新加载最新的数据了
@@ -28,13 +28,14 @@ java内存模型
         答：volatile修饰的值中，在每个volatile写操作前面，加StoreStore屏障，禁止普通写与之重排。在volatile后面加StoreLoad屏障，
             禁止下面的volatile读/写重排。
          每个volatile读操作后面,加LoadLoad屏障,禁止下面的普通读和voaltile读重排;
-            每个volatile读操作后面，加LoadStore屏障，禁止下面的普通写和 volatile读重排
+         每个volatile读操作后面，加LoadStore屏障，禁止下面的普通写和 volatile读重排;
     5、了解指令重排和happens-before吗？
         答：指令编排，是指编译器和指令器为了提高性能，对指令进行重新排序，在不影响原代码的最终结果的前提下。
             而happens-before是规定了一些规范，在一些情况下不允许指令重排。
     6、volatile怎么保证原子性呢？或者volatile可以保证原子性吗？
         不行。volatile不能保证原子性，除非某些极端情况下保证原子性的效果。
         Oracle中对64位的long的数字进行操作，volatile可以保证原子性。(即指令的6种操作)
+        只能加锁。
     7、volatile底层原理是什么呢？内存屏障级别的原理？
             
     1、JMM(Java Memory Model)

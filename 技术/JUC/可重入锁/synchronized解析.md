@@ -1,10 +1,7 @@
-说说synchronized底层原理是什么？
+    说说synchronized底层原理是什么？
 
     对于synchronized底层的原理，是跟jvm指令和monitor有关系的
-        再底层编译后的jvm指令中，会有monitorenter和monitorexit两个指令
-            会有monitorenter和monitorexit两个指令
-            monitorenter
-    monitorexit
+        在底层编译后的jvm指令中，会有monitorenter和monitorexit两个指令
     那么monitorenter指令执行的时候会干什么呢?
     每个对象都有一个关联的monitor，比如一个对象实例就有一个monitor，一个类的Class对象也有一个monitor
     如果要对这个对象加锁,那么必须获取这个对象关联的monitor的 lock锁
