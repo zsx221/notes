@@ -4,7 +4,7 @@
             读到了，造成了脏读。回答了这个问题，咱们继续回答，ReadView机制如何去解决脏读呢？
             事务A，事务B并发执行，事务A的id为10，事务B的id为30。
             首先事务B查询t表中的sno为10，
-            事务A对t表中的sno进行修改，update t set sno=20，并且更新un log日志;
+            事务A对t表中的sno进行修改，update t set sno=20，并且更新undo log日志;
             此时如果innoDB的隔离级别为读提交，那么b再次查询，会产生一个ReadView视图，此时视图中的几个字段分别为：m_ids[10-30],min_trx_id=10
             max_trx_id=20,creator_trx_id=30;
             最新的数据更新事务id(row_trx_id)为10，在10-30之内，再继续判断是否存在m_ids数组之内，存在，则不可读，去读上一个版本的数据，读到了10.
